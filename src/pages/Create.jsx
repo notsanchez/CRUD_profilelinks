@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import './Create.scss'
+import './Profile.css'
 import FileBase64 from 'react-file-base64';
 
 const Create = () => {
@@ -50,12 +51,21 @@ const Create = () => {
           />
         </div>
         <label>Image:</label>
+
+        <img className="create-picture"
+          src={image} 
+        />
+  
         <FileBase64
+        accept=".png, .jpg, .jpeg"
+        name="arquivo"
         multiple={ false }
-        onDone={({base64})=>setImage(base64)} />
+        onDone={({base64})=>setImage(base64)} 
+        />
         
         <label>Bio:</label>
         <textarea 
+          className="form-field"
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}

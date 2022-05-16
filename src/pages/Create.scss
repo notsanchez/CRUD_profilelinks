@@ -1,8 +1,8 @@
 :root {
 
     --input-color: #99A3BA;
-    --input-border: #ffffff;
-    --input-background: #fff;
+    --input-border: #000000;
+    --input-background: rgb(37, 37, 37);
     --input-placeholder: #CBD1DC;
 
     --input-border-focus: #000000;
@@ -22,6 +22,7 @@ form{
 }
 
 .form-field {
+    border: 0px!important;
     display: block;
     width: 100%;
     padding: 8px 16px;
@@ -32,7 +33,6 @@ form{
     border-radius: 6px;
     -webkit-appearance: none;
     color: var(--input-color);
-    border: 1px solid var(--input-border);
     background: var(--input-background);
     transition: border .3s ease;
     &::placeholder {
@@ -40,7 +40,6 @@ form{
     }
     &:focus {
         outline: none;
-        border-color: var(--input-border-focus);
     }
 }
 

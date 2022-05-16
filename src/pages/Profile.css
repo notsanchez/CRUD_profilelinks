@@ -15,7 +15,33 @@ body {
   height: 200px;
   max-width: 200px;
 
+  width: 100%;
+
+  object-fit: cover;
+
   border-radius: 50%;
+}
+
+.create-picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  border: 3px solid #8d35f1;
+
+  margin-top: 5%;
+  height: 200px;
+  max-width: 200px;
+
+  width: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.create-picture[src=""] {
+  display: none;
 }
 
 .profile-name {
@@ -69,4 +95,51 @@ a {
 
 a:empty{
   display: none!important;
+}
+
+.loader {
+  border: 4px solid #000000; /* Light grey */
+  border-top: 4px solid #8d35f1; /* Blue */
+  border-radius: 50%;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 350px;
+  animation: spin 0.2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+input[type="file"]::before {
+  content: 'Select picture';
+  display: inline-block;
+  background-color: #000;
+  border: 1px solid #8d35f1;
+  color: #fff;
+  padding: 6px 90px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 10pt;
+  transition: all 400ms;
+  
+}
+
+input[type="file"]{
+  border: 0px;
+}
+
+input[type="file"]:hover::before {
+  background-color: #8d35f1;
+  color: #000;
 }

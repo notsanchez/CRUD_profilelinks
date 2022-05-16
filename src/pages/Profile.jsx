@@ -1,16 +1,34 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../useFetch";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import './Profile.css'
 
 const Profile = () => {
 
   const { id } = useParams();
-  const { data: data, error } = useFetch('https://url-linkapi.herokuapp.com/pages/' + id);
+
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+
+  useEffect(() => {
+    axios
+      .get('https://url-linkapi.herokuapp.com/pages/' + id)
+      .then(res => {
+        setData(res.data);
+        setLoading(true);
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  }, []);
+  console.log(loading);
 
   return (
     <div className="blog-details">
       { error && <div>Pagina não encontrada :(</div> }
-      { data && (
+      { loading ? data && (
         <div className="body">
 
           <img className="profile-picture"
@@ -33,6 +51,8 @@ const Profile = () => {
           </a>
           <p className="author">code by @sanchezscript</p>
         </div>
+      ):(
+        <div className="loader"></div>
       )}
     </div>
   );

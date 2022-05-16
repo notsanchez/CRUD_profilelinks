@@ -10,10 +10,10 @@
   align-items: center;
   max-width: 600px;
   margin: 0 auto;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #8d35f1ff;
 }
 .navbar h1 {
-  color: #ffffff;
+  color: #ffff;
 }
 .navbar .links {
   margin-left: auto;
@@ -21,12 +21,12 @@
 
 .navbar .links a{
   padding: 5px 10px 5px 10px;
-  border: #fff 2px solid;
+  border: #8d35f1 2px solid;
   transition: all 400ms;
 }
 
 .navbar .links a:hover{
-  background-color: #fff;
+  background-color: #8d35f1;
   color: #000;
 }
 
@@ -69,7 +69,7 @@
   padding: 6px 10px;
   margin: 10px 0;
   height: 40px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid #8d35f1;
   border-radius: 5px;
   box-sizing: border-box;
   display: block;
@@ -78,7 +78,7 @@
 .create button {
   color: #fff;
   background-color: #000;
-  border: #fff 2px solid;
+  border: #8d35f1 2px solid;
   font-size: 25px;
   padding: 10px 50px 10px 50px;
   cursor: pointer;
@@ -88,7 +88,7 @@
 }
 
 .create button:hover{
-  background-color: #fff;
+  background-color: #8d35f1;
   color: #000;
 }
 
@@ -106,7 +106,7 @@
 
 .home a {
   width: 200px;
-  border: rgb(255, 255, 255) 2px solid;
+  border: #8d35f1 2px solid;
   color: #fff;
   padding: 10px;
   margin: 0 auto;
@@ -117,7 +117,7 @@
 }
 
 .home a:hover{
-  background-color: #fff;
+  background-color: #8d35f1;
   color: #000;
 }
 
