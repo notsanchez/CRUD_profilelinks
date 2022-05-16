@@ -17,6 +17,10 @@
 
 }
 
+form{
+    margin-top: 80px;
+}
+
 .form-field {
     display: block;
     width: 100%;
@@ -86,4 +90,8 @@
             border-color: var(--group-border-focus);
         }
     }
+}
+
+textarea{
+    resize: none;
 }

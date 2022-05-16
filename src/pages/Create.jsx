@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import './Create.scss'
+import FileBase64 from 'react-file-base64';
 
 const Create = () => {
 
@@ -38,7 +39,7 @@ const Create = () => {
     <div className="create">
       <form onSubmit={handleSubmit}>
       <div className="form-group">
-          <span>braindead.jsx/</span>
+          <span>sanchezroot.wtf/</span>
           <input 
             className="form-field" 
             type="text" 
@@ -49,41 +50,88 @@ const Create = () => {
           />
         </div>
         <label>Image:</label>
-        <input 
-          type="text"
-          required
-          value={image}
-          placeholder="exemplo: https://imgur.com/PNE6xvi.png"
-          onChange={(e) => setImage(e.target.value)}
-        />
+        <FileBase64
+        multiple={ false }
+        onDone={({base64})=>setImage(base64)} />
+        
         <label>Bio:</label>
         <textarea 
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
+          maxLength="50"
         ></textarea>
+
         <hr/>
+
         <label>Link 1</label>
         <div className="form-group">
-          <input className="form-field" type="text" required placeholder="URL Name" value={social} onChange={(e) => setSocial(e.target.value)}/>
-          <input className="form-field" type="text" placeholder="URL Link" value={sociallink} onChange={(e) => setSociallink(e.target.value)}/>
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Name" 
+          value={social} onChange={(e) => setSocial(e.target.value)}
+          />
+
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Link" 
+          value={sociallink} onChange={(e) => setSociallink(e.target.value)}
+          />
         </div>
+
         <label>Link 2</label>
         <div className="form-group">
-          <input className="form-field" type="text" required placeholder="URL Name" value={social2} onChange={(e) => setSocial2(e.target.value)}/>
-          <input className="form-field" type="text" required placeholder="URL Link" value={social2link} onChange={(e) => setSocial2link(e.target.value)}/>
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Name" 
+          value={social2} onChange={(e) => setSocial2(e.target.value)}
+          />
+
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Link" 
+          value={social2link} onChange={(e) => setSocial2link(e.target.value)}
+          />
         </div>
+
         <label>Link 3</label>
         <div className="form-group">
-          <input className="form-field" type="text" required placeholder="URL Name" value={social3} onChange={(e) => setSocial3(e.target.value)}/>
-          <input className="form-field" type="text" required placeholder="URL Link" value={social3link} onChange={(e) => setSocial3link(e.target.value)}/>
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Name" 
+          value={social3} onChange={(e) => setSocial3(e.target.value)}
+          />
+
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Link" 
+          value={social3link} onChange={(e) => setSocial3link(e.target.value)}
+          />
         </div>
+
         <label>Link 4</label>
         <div className="form-group">
-          <input className="form-field" type="text" required placeholder="URL Name" value={social4} onChange={(e) => setSocial4(e.target.value)}/>
-          <input className="form-field" type="text" required placeholder="URL Link" value={social4link} onChange={(e) => setSocial4link(e.target.value)}/>
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Name" 
+          value={social4} onChange={(e) => setSocial4(e.target.value)}
+          />
+
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="URL Link" 
+          value={social4link} onChange={(e) => setSocial4link(e.target.value)}
+          />
         </div>
-          <button>Criar</button>
+          <button>Create</button>
       </form>
     </div>
   );

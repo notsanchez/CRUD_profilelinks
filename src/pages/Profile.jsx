@@ -3,6 +3,7 @@ import useFetch from "../useFetch";
 import './Profile.css'
 
 const Profile = () => {
+
   const { id } = useParams();
   const { data: data, error } = useFetch('https://url-linkapi.herokuapp.com/pages/' + id);
 

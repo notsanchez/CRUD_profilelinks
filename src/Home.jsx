@@ -1,9 +1,10 @@
 import './index.css'
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="home">
-      <h1>Welcome...</h1>
+        <Link to="/create" className="create">CREATE PAGE</Link>
     </div>
   );
 }

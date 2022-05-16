@@ -19,7 +19,6 @@ function App() {
               <Create />
             </Route>
             <Route path="/:id">
-              <Navbar />
               <Profile />
             </Route>
           </Switch>

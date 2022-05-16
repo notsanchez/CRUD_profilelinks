@@ -11,7 +11,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 
-  margin-top: 5%;
+  margin-top: 20%;
   height: 200px;
   max-width: 200px;
 
@@ -65,4 +65,8 @@ a {
   text-decoration: none;
 
   color: rgb(255, 255, 255);
+}
+
+a:empty{
+  display: none!important;
 }

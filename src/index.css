@@ -18,15 +18,25 @@
 .navbar .links {
   margin-left: auto;
 }
+
+.navbar .links a{
+  padding: 5px 10px 5px 10px;
+  border: #fff 2px solid;
+  transition: all 400ms;
+}
+
+.navbar .links a:hover{
+  background-color: #fff;
+  color: #000;
+}
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
   font-size: 20px;
 }
-.navbar a:hover {
-  color: #8d35f1;
-}
+
 .content {
   max-width: 600px;
   margin: 0px auto;
@@ -66,12 +76,11 @@
 }
 
 .create button {
-  background: #8d35f1;
   color: #fff;
-  border: 0;
+  background-color: #000;
+  border: #fff 2px solid;
   font-size: 25px;
   padding: 10px 50px 10px 50px;
-  border-radius: 8px;
   cursor: pointer;
   transition: all 400ms;
   margin: 20px;
@@ -79,7 +88,8 @@
 }
 
 .create button:hover{
-  transform: scale(0.9);
+  background-color: #fff;
+  color: #000;
 }
 
 .link-area{
@@ -94,7 +104,22 @@
   opacity: 1;
 }
 
+.home a {
+  width: 200px;
+  border: rgb(255, 255, 255) 2px solid;
+  color: #fff;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 300px;
+  display: block;
+  text-align: center;
+  transition: all 400ms;
+}
 
+.home a:hover{
+  background-color: #fff;
+  color: #000;
+}
 
 
 
