@@ -21,6 +21,7 @@ const Profile = () => {
       })
       .catch((err) => {
         setError(err);
+        setLoading(true)
       });
   }, []);
   console.log(loading);
