@@ -165,3 +165,12 @@ input[type="file"]:hover::before {
   background-color: #8d35f1;
   color: #000;
 }
+
+
+.formAccount{
+  margin-top: 100px;
+}
+
+input{
+  text-align: center;
+}

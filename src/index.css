@@ -111,9 +111,11 @@
   width: 200px;
   border: #8d35f1 2px solid;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
   margin: 0 auto;
+  font-size: 25px;
   margin-top: 20px;
+  cursor: pointer;
   display: block;
   text-align: center;
   transition: all 400ms;
@@ -121,6 +123,12 @@
 
 .home a:hover{
   background-color: #8d35f1;
+}
+
+.LogOut {
+  margin-top: 70px!important;
+  padding: 3px!important;
+  font-size: 15px!important;
 }
 
 
