@@ -27,7 +27,6 @@
 
 .navbar .links a:hover{
   background-color: #8d35f1;
-  color: #000;
 }
 
 .navbar a {
@@ -89,7 +88,6 @@
 
 .create button:hover{
   background-color: #8d35f1;
-  color: #000;
 }
 
 .link-area{
@@ -104,13 +102,18 @@
   opacity: 1;
 }
 
+.home{
+  margin-top: 300px;
+}
+
+
 .home a {
   width: 200px;
   border: #8d35f1 2px solid;
   color: #fff;
   padding: 10px;
   margin: 0 auto;
-  margin-top: 300px;
+  margin-top: 20px;
   display: block;
   text-align: center;
   transition: all 400ms;
@@ -118,7 +121,6 @@
 
 .home a:hover{
   background-color: #8d35f1;
-  color: #000;
 }
 
 
