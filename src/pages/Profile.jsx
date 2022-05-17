@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './Profile.css'
+import ReactPlayer from "react-player"
 
 const Profile = () => {
 
@@ -50,7 +51,19 @@ const Profile = () => {
           <a href={ data.social4link } className="social">
               { data.social4}
           </a>
+          <p className="author">⠀⠀⠀⠀</p>
+
+          <ReactPlayer
+            className='react-player'
+            width='100%'
+            height='100%'
+            style={
+              {margin: "auto"}
+              }
+            url={data.music}
+          />
           <p className="author">code by @sanchezscript</p>
+
         </div>
       ):(
         <div className="loader"></div>

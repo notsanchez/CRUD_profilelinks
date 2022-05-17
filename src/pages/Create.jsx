@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './Create.scss'
 import './Profile.css'
 import FileBase64 from 'react-file-base64';
+import ReactPlayer from "react-player"
 
 const Create = () => {
 
@@ -19,11 +20,13 @@ const Create = () => {
   const [social3link, setSocial3link] = useState('');
   const [social4link, setSocial4link] = useState('');
 
+  const [music, setMusic] = useState('');
+
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { id, image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link }
+    const data = { id, image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music }
 
     fetch('https://url-linkapi.herokuapp.com/pages/', {
       method: 'POST',
@@ -66,7 +69,6 @@ const Create = () => {
         <label>Bio:</label>
         <textarea 
           className="form-field"
-          required
           value={body}
           onChange={(e) => setBody(e.target.value)}
           maxLength="50"
@@ -74,7 +76,7 @@ const Create = () => {
 
         <hr/>
 
-        <label>Link 1</label>
+        <label>Links area:</label>
         <div className="form-group">
           <input 
           className="form-field" 
@@ -91,7 +93,7 @@ const Create = () => {
           />
         </div>
 
-        <label>Link 2</label>
+        <label>⠀⠀⠀⠀</label>
         <div className="form-group">
           <input 
           className="form-field" 
@@ -108,7 +110,7 @@ const Create = () => {
           />
         </div>
 
-        <label>Link 3</label>
+        <label>⠀⠀⠀⠀</label>
         <div className="form-group">
           <input 
           className="form-field" 
@@ -125,7 +127,7 @@ const Create = () => {
           />
         </div>
 
-        <label>Link 4</label>
+        <label>⠀⠀⠀⠀</label>
         <div className="form-group">
           <input 
           className="form-field" 
@@ -141,6 +143,23 @@ const Create = () => {
           value={social4link} onChange={(e) => setSocial4link(e.target.value)}
           />
         </div>
+        <label>⠀⠀⠀⠀</label>
+        <div className="form-group">
+          <input 
+          className="form-field" 
+          type="text" 
+          placeholder="Music URL (SoundCloud || YouTube)" 
+          value={music} onChange={(e) => setMusic(e.target.value)}
+          />
+        </div>
+
+        <ReactPlayer
+            className="player-react"
+            width="100%"
+            height="100%"
+            style={{margin: "auto", marginTop: "20px"}}
+            url={music}
+          />
           <button>Create</button>
       </form>
     </div>
