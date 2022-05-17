@@ -5,6 +5,11 @@
   font-family: "Poppins";
   color: #333;
 }
+
+a{
+  border-radius: 10px;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -22,11 +27,13 @@
 .navbar .links a{
   padding: 5px 10px 5px 10px;
   border: #8d35f1 2px solid;
+  background-color: #8d35f1;
   transition: all 400ms;
 }
 
 .navbar .links a:hover{
-  background-color: #8d35f1;
+  border-radius: 0px;
+  background-color: #5b2499;
 }
 
 .navbar a {
@@ -75,6 +82,7 @@
 }
 
 .create button {
+  border-radius: 10px!important;
   color: #fff;
   background-color: #000;
   border: #8d35f1 2px solid;
