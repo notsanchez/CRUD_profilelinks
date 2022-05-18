@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import LogOutNavbar from './components/LogOutNavbar';
 import Home from './Home';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Create from './pages/Create';
@@ -32,15 +33,15 @@ function App() {
           </Switch>
           }
             <Route path="/signup">
-              <Navbar/>
+              <LogOutNavbar/>
               <SignUp />
             </Route>
             <Route path="/login">
-              <Navbar/>
+              <LogOutNavbar/>
               <Login />
             </Route>
             <Route path="/:id">
-              <Navbar />
+              <LogOutNavbar />
               <Profile />
             </Route>
             <Route exact path="/" render={()=>(

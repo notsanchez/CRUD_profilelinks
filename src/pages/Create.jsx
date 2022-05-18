@@ -24,12 +24,16 @@ const Create = () => {
 
   const history = useHistory();
 
+  const user = localStorage.getItem('user');
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const id = user;
+
     const data = { id, image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music }
 
-    fetch('https://url-linkapi.herokuapp.com/pages/', {
-      method: 'POST',
+    fetch('https://url-linkapi.herokuapp.com/pages/'+id, {
+      method: 'PUT',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
@@ -49,7 +53,8 @@ const Create = () => {
             type="text" 
             placeholder="Username"
             required
-            value={id}
+            disabled
+            value={user}
             onChange={(e) => setId(e.target.value)}
           />
         </div>

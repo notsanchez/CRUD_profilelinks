@@ -18,6 +18,7 @@ const Login = () => {
 			const url = "https://profile-backendauth.herokuapp.com/api/auth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
+      localStorage.setItem("user", data.userName)
 			window.location = "/";
 		} catch (error) {
 			if (

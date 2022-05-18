@@ -18,8 +18,15 @@ a{
   border-bottom: 1px solid #8d35f1ff;
 }
 .navbar h1 {
+  margin: 0 auto;
+  text-align: center;
   color: #ffff;
 }
+
+.navbar a{
+  color: #ffff;
+}
+
 .navbar .links {
   margin-left: auto;
 }
@@ -37,7 +44,8 @@ a{
 }
 
 .navbar a {
-  margin-left: 16px;
+  margin-left: 40px;
+  margin: 0 auto;
   text-decoration: none;
   padding: 6px;
   font-size: 20px;
