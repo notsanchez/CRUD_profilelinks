@@ -3,52 +3,10 @@
 * {
   margin: 0;
   font-family: "Poppins";
-  color: #333;
 }
 
 a{
   border-radius: 10px;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #8d35f1ff;
-}
-.navbar h1 {
-  margin: 0 auto;
-  text-align: center;
-  color: #ffff;
-}
-
-.navbar a{
-  color: #ffff;
-}
-
-.navbar .links {
-  margin-left: auto;
-}
-
-.navbar .links a{
-  padding: 5px 10px 5px 10px;
-  border: #8d35f1 2px solid;
-  background-color: #8d35f1;
-  transition: all 400ms;
-}
-
-.navbar .links a:hover{
-  border-radius: 0px;
-  background-color: #5b2499;
-}
-
-.navbar a {
-  margin-left: 40px;
-  margin: 0 auto;
-  text-decoration: none;
-  padding: 6px;
-  font-size: 20px;
 }
 
 .create{
@@ -68,7 +26,7 @@ a{
 
 .create h2 {
   font-size: 30px;
-  color: #8d35f1;
+  color: rgb(255, 79, 79);
   margin-bottom: 30px;
 }
 
@@ -77,7 +35,7 @@ a{
   padding: 6px 10px;
   margin: 10px 0;
   height: 40px;
-  border: 1px solid #8d35f1;
+  border: 1px solid rgb(255, 79, 79);
   border-radius: 5px;
   box-sizing: border-box;
   display: block;
@@ -87,7 +45,7 @@ a{
   border-radius: 10px!important;
   color: #fff;
   background-color: #000;
-  border: #8d35f1 2px solid;
+  border: rgb(255, 79, 79) 2px solid;
   font-size: 25px;
   padding: 10px 50px 10px 50px;
   cursor: pointer;
@@ -97,7 +55,7 @@ a{
 }
 
 .create button:hover{
-  background-color: #8d35f1;
+  background-color: rgb(255, 79, 79);
 }
 
 .link-area{
@@ -119,7 +77,7 @@ a{
 
 .home a {
   width: 200px;
-  border: #8d35f1 2px solid;
+  border: rgb(255, 79, 79) 2px solid;
   color: #fff;
   padding: 20px;
   margin: 0 auto;
@@ -132,7 +90,7 @@ a{
 }
 
 .home a:hover{
-  background-color: #8d35f1;
+  background-color: rgb(255, 79, 79);
 }
 
 .LogOut {

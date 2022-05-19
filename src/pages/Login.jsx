@@ -7,12 +7,14 @@ import './Profile.css'
 const Login = () => {
 	const [data, setData] = useState({ userName: "", password: "" });
 	const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
 
 	const handleSubmit = async (e) => {
+    setLoading(false);
 		e.preventDefault();
 		try {
 			const url = "https://profile-backendauth.herokuapp.com/api/auth";
@@ -35,6 +37,8 @@ const Login = () => {
 
   return (
     <div className="create">
+      <title>Login | sanchezroot.wtf</title>
+      { loading ? (
       <form onSubmit={handleSubmit} className="formAccount">
         <div className="">
             <h1>Login</h1>
@@ -64,10 +68,11 @@ const Login = () => {
         <h4>New here?</h4>
         <Link to="/signup">
 		    <button type="button">
-				Sing Up
-			</button>
-		</Link>
+				Sign Up
+			  </button>
+		    </Link>
       </form>
+      ):(<div className="loader"></div>)}
     </div>
   );
 }

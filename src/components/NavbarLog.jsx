@@ -2,8 +2,18 @@
 import React from 'react'
 import './Navbar.scss';
 import { Link } from "react-router-dom";
+import { FaUserAstronaut } from "react-icons/fa";
 
-function Navbar() {
+function NavbarLog() {
+
+    const handleLogout = () => {
+		localStorage.removeItem("token");
+    localStorage.removeItem("user");
+		window.location.reload();
+	};
+
+    const user = localStorage.getItem('user');
+
     return (
         <>
         <nav class="navbar">
@@ -22,7 +32,9 @@ function Navbar() {
 
                 <div class="navbar-menu" id="open-navbar1">
                 <ul class="navbar-nav">
-                    <li class="active"><Link to="/">Home</Link></li>
+                    <li><Link to="/dashboard"><FaUserAstronaut color='rgb(255, 79, 79)!important' size={20}/> {user}</Link></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/" onClick={handleLogout}>LogOut</Link></li>
                 </ul>
                 </div>
             </div>
@@ -31,4 +43,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default NavbarLog

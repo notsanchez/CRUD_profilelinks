@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import './Profile.css'
 import ReactPlayer from "react-player"
+import { FaBehance } from "react-icons/fa";
 
 const Profile = () => {
 
@@ -33,7 +34,7 @@ const Profile = () => {
       { error && <div>Pagina não encontrada :(</div> }
       { loading ? data && (
         <div className="body">
-
+          <title>{data.id} | sanchezroot.wtf</title>
           <img className="profile-picture"
               src={ data.image } />
 
@@ -63,6 +64,7 @@ const Profile = () => {
               }
             url={data.music}
           />
+          
           <div className="author">
             <p>made with <a href="/">sanchezroot.wtf</a></p>
           </div>

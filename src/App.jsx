@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import LogOutNavbar from './components/LogOutNavbar';
+import NavbarLog from './components/NavbarLog';
 import Home from './Home';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Create from './pages/Create';
@@ -20,11 +20,11 @@ function App() {
           {user && 
           <Switch>
             <Route exact path="/">
-              <Navbar/>
+              <NavbarLog/>
               <Home />
             </Route>
             <Route exact path="/dashboard">
-              <Navbar/>
+              <NavbarLog/>
               <Create />
             </Route>
             <Route path="/:id">
@@ -33,11 +33,11 @@ function App() {
           </Switch>
           }
             <Route path="/signup">
-              <LogOutNavbar/>
+              <Navbar/>
               <SignUp />
             </Route>
             <Route path="/login">
-              <LogOutNavbar/>
+              <Navbar/>
               <Login />
             </Route>
             <Route path="/:id">
@@ -53,7 +53,7 @@ function App() {
         </div>
       </div>
     </Router>
-    </>
+      </>
   );
 }
 

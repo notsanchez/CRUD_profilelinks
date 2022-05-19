@@ -10,10 +10,9 @@ const Signup = () => {
 		password: "",
 	});
 
-    const history = useHistory();
-
+  const history = useHistory();
 	const [error, setError] = useState("");
-
+  const [loading, setLoading] = useState(true);
   const [image] = useState('');
   const [body] = useState('');
   const [social] = useState('');
@@ -31,6 +30,7 @@ const Signup = () => {
 	};
 
 	const handleSubmit = async (e) => {
+    setLoading(false);
 		e.preventDefault();
 		try {
 			const url = "https://profile-backendauth.herokuapp.com/api/users";
@@ -64,10 +64,14 @@ const Signup = () => {
 
   return (
     <div className="create">
+      <title>Sign Up | sanchezroot.wtf</title>
+      { loading ? (
       <form onSubmit={handleSubmit} className="formAccount">
         <div className="">
             <h1>Create Account</h1>
-            <input 
+            <div className="form-group">
+              <span>sanchezroot.wtf/</span>
+              <input 
                 className="form-field" 
                 type="text" 
                 placeholder="Username"
@@ -75,7 +79,8 @@ const Signup = () => {
                 name="userName"
                 value={data.userName}
                 onChange={handleChange}
-            />
+              />
+            </div>
             <input 
                 className="form-field" 
                 type="password" 
@@ -97,6 +102,7 @@ const Signup = () => {
 			</button>
 		</Link>
       </form>
+      ):(<div className="loader"></div>)}
     </div>
   );
 }

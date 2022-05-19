@@ -9,7 +9,7 @@ import ReactPlayer from "react-player"
 const Create = () => {
 
   const [data, setData] = useState('');
-
+  const [loading, setLoading] = useState(false);
   const [setId] = useState('');
   const [image, setImage] = useState('' || data.image);
   const [body, setBody] = useState('' || data.body);
@@ -34,6 +34,7 @@ const Create = () => {
       .get('https://url-linkapi.herokuapp.com/pages/' + id)
       .then(res => {
         setData(res.data);
+        setLoading(true);
       })
       .catch((err) => {
         console.log(err)
@@ -60,8 +61,9 @@ const Create = () => {
   return (
     <div className="create">
       <form onSubmit={handleSubmit}>
-      { data &&(
+      { loading ? data &&(
       <div>
+      <title>{data.id} - Dashboard | sanchezroot.wtf</title>
       <div className="form-group">
           <span>sanchezroot.wtf/</span>
           <input 
@@ -182,9 +184,10 @@ const Create = () => {
             style={{margin: "auto", marginTop: "20px"}}
             url={data.music || music}
           />
+
           <button>Create</button>
         </div>
-        )}
+        ):(<div className="loader"></div>)}
       </form>
     </div>
   );

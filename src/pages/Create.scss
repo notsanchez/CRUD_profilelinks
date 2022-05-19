@@ -1,9 +1,9 @@
 :root {
 
-    --input-color: #99A3BA;
+    --input-color: #ffffff;
     --input-border: #000000;
     --input-background: rgb(37, 37, 37);
-    --input-placeholder: #CBD1DC;
+    --input-placeholder: #cbd1dc75;
 
     --input-border-focus: #000000;
 
@@ -35,6 +35,7 @@ form{
     color: var(--input-color);
     background: var(--input-background);
     transition: border .3s ease;
+    text-align: center;
     &::placeholder {
         color: var(--input-placeholder);
     }
