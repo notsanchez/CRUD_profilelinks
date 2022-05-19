@@ -28,7 +28,8 @@ const Profile = () => {
   console.log(loading);
 
   return (
-    <div className="blog-details">
+    <body>
+    <div className="profile-details">
       { error && <div>Pagina não encontrada :(</div> }
       { loading ? data && (
         <div className="body">
@@ -62,13 +63,16 @@ const Profile = () => {
               }
             url={data.music}
           />
-          <p className="author">code by @sanchezscript</p>
+          <div className="author">
+            <p>made with <a href="/">sanchezroot.wtf</a></p>
+          </div>
 
         </div>
       ):(
         <div className="loader"></div>
       )}
     </div>
+    </body>
   );
 }
  

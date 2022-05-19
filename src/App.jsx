@@ -12,6 +12,7 @@ function App() {
   const user = localStorage.getItem("token");
 
   return (
+    <>
     <Router>
       <div className="App">
         <div className="content">
@@ -22,12 +23,11 @@ function App() {
               <Navbar/>
               <Home />
             </Route>
-            <Route path="/create">
+            <Route exact path="/dashboard">
               <Navbar/>
               <Create />
             </Route>
             <Route path="/:id">
-              <Navbar />
               <Profile />
             </Route>
           </Switch>
@@ -41,8 +41,10 @@ function App() {
               <Login />
             </Route>
             <Route path="/:id">
-              <LogOutNavbar />
               <Profile />
+            </Route>
+            <Route exact path="/dashboard">
+              <Login/>
             </Route>
             <Route exact path="/" render={()=>(
               <Home/> ? <Redirect to="/login" /> : <Login />         
@@ -51,6 +53,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </>
   );
 }
 

@@ -14,6 +14,18 @@ const Signup = () => {
 
 	const [error, setError] = useState("");
 
+  const [image] = useState('');
+  const [body] = useState('');
+  const [social] = useState('');
+  const [social2] = useState('');
+  const [social3] = useState('');
+  const [social4] = useState('');
+  const [sociallink] = useState('');
+  const [social2link] = useState('');
+  const [social3link] = useState('');
+  const [social4link] = useState('');
+  const [music] = useState('');
+
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
@@ -35,6 +47,18 @@ const Signup = () => {
 				setError(error.response.data.message);
 			}
 		}
+
+    const dataprofile = { image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music }
+
+    fetch('https://url-linkapi.herokuapp.com/pages/'+data.userName, {
+      method: 'PUT',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(dataprofile)
+    }).then(() => {
+      console.log('new page add')
+    })
+
+
 	};
 
 

@@ -15,10 +15,10 @@ const Home = () => {
 
 
   return (
-    
     <div className="home">
+        <h1>Welcome back, {user}</h1>
         <Link to={userlink} className="create">MY PAGE</Link>
-        <Link to="/create" className="create">DASHBOARD</Link>
+        <Link to="/dashboard" className="create">CONFIGURE PAGE</Link>
         <Link to="/sanchez" className="create">OWNER 😎🤞</Link>
         <a className="LogOut" onClick={handleLogout}>
 					Logout
