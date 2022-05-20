@@ -38,8 +38,19 @@ const Signup = () => {
 			const url = "https://profile-backendauth.herokuapp.com/api/users";
 			const { data: res } = await axios.post(url, data);
 			console.log(res.message);
+
+      const dataprofile = { image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink }
+
+      fetch('https://url-linkapi.herokuapp.com/pages/'+data.userName, {
+        method: 'PUT',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(dataprofile)
+      }).then(() => {
+        console.log('new page add')
+      })
       let path = `/login`; 
       history.push(path);
+
 		} catch (error) {
 			if (
 				error.response &&
@@ -52,16 +63,6 @@ const Signup = () => {
         history.push(path);
 			}
 		}
-
-    const dataprofile = { image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink }
-
-    fetch('https://url-linkapi.herokuapp.com/pages/'+data.userName, {
-      method: 'PUT',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(dataprofile)
-    }).then(() => {
-      console.log('new page add')
-    })
 
 
 	};
