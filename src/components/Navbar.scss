@@ -67,7 +67,7 @@ a {
 .navbar {
   box-shadow: $navbar-shadow;
   background-color: $navbar-body-color;
-  padding: $navbar-padding-y $navbar-padding-x;
+  padding: 0 $navbar-padding-x;
   border-bottom: 1px solid $border-color;
 
   .container {
