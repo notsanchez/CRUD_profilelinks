@@ -22,6 +22,7 @@ const Create = () => {
   const [social3link, setSocial3link] = useState('' || data.social3link);
   const [social4link, setSocial4link] = useState('' || data.social4link);
   const [music, setMusic] = useState('' || data.music);
+  const [nolink] = useState('  ');
 
   const history = useHistory();
 
@@ -45,7 +46,7 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const dataprofile = { id, image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music }
+    const dataprofile = { id, image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink }
 
     fetch('https://url-linkapi.herokuapp.com/pages/'+id, {
       method: 'PUT',

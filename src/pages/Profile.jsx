@@ -83,8 +83,8 @@ const Profile = () => {
               }
             url={data.music}
           />
-
           <div className="author">
+            <h2><span>{data.nolink}</span></h2>
             <p>made with <a href="/">sanchezroot.wtf</a></p>
           </div>
         </div>

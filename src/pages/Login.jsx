@@ -29,13 +29,8 @@ const Login = () => {
 				error.response.status <= 500
 			) {
 				setError(error.response.data.message);
+        setLoading(true);
 			}
-
-      if(
-        error.response.status == 400
-      ){
-        setError('Erro no servidor, faça login novamente.')
-      }
 		}
 
 	};
@@ -67,7 +62,7 @@ const Login = () => {
                 onChange={handleChange}
             />
             </div>
-        {error && <p>{error}</p>}
+            {error && <p>{error}</p>}
         <button type="submit">
             Login
         </button>
@@ -78,8 +73,9 @@ const Login = () => {
 			  </button>
 		    </Link>
       </form>
-      ):(
-        <div className="loader"></div>
+      ):(<>
+          <div className="loader"></div>
+        </>
         )}
     </div>
   );

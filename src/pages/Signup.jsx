@@ -10,10 +10,11 @@ const Signup = () => {
 		password: "",
 	});
 
+
   const history = useHistory();
 	const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
-  const [image] = useState('');
+  const [image] = useState('https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png');
   const [body] = useState('');
   const [social] = useState('');
   const [social2] = useState('');
@@ -24,6 +25,7 @@ const Signup = () => {
   const [social3link] = useState('');
   const [social4link] = useState('');
   const [music] = useState('');
+  const [nolink] = useState('');
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
@@ -36,8 +38,8 @@ const Signup = () => {
 			const url = "https://profile-backendauth.herokuapp.com/api/users";
 			const { data: res } = await axios.post(url, data);
 			console.log(res.message);
-            let path = `/login`; 
-            history.push(path);
+      let path = `/login`; 
+      history.push(path);
 		} catch (error) {
 			if (
 				error.response &&
@@ -45,10 +47,13 @@ const Signup = () => {
 				error.response.status <= 500
 			) {
 				setError(error.response.data.message);
+        setLoading(true);
+        let path = `/signup`; 
+        history.push(path);
 			}
 		}
 
-    const dataprofile = { image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music }
+    const dataprofile = { image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink }
 
     fetch('https://url-linkapi.herokuapp.com/pages/'+data.userName, {
       method: 'PUT',

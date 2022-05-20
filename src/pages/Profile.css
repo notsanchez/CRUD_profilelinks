@@ -75,6 +75,10 @@ body {
   opacity: 1;
 }
 
+p{
+  color: #fff;
+}
+
 .author a{
   opacity: 1;
   color: rgb(255, 79, 79);
@@ -118,6 +122,10 @@ a {
 
 a:empty{
   display: none!important;
+}
+
+.author h2 span:empty::after{
+  content: 'not links yet :(';
 }
 
 h1, h2, h3, h4 {
