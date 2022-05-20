@@ -30,6 +30,12 @@ const Login = () => {
 			) {
 				setError(error.response.data.message);
 			}
+
+      if(
+        error.response.status == 400
+      ){
+        setError('Erro no servidor, faça login novamente.')
+      }
 		}
 
 	};
