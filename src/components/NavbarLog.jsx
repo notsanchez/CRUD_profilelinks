@@ -2,17 +2,20 @@
 import React from 'react'
 import './Navbar.scss';
 import { Link } from "react-router-dom";
-import { FaUserAstronaut } from "react-icons/fa";
+import { FaUserAstronaut, FaSignOutAlt, FaHome, FaPencilRuler } from "react-icons/fa";
+
 
 function NavbarLog() {
 
     const handleLogout = () => {
 		localStorage.removeItem("token");
-    localStorage.removeItem("user");
+        localStorage.removeItem("user");
 		window.location.reload();
 	};
 
     const user = localStorage.getItem('user');
+
+    var userlink = '/'+user
 
     return (
         <>
@@ -32,9 +35,10 @@ function NavbarLog() {
 
                 <div class="navbar-menu" id="open-navbar1">
                 <ul class="navbar-nav">
-                    <li><Link to="/dashboard"><FaUserAstronaut color='rgb(255, 79, 79)!important' size={20}/> {user}</Link></li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+                    <li><Link to="/"><FaHome size={30}/></Link></li>
+                    <li><Link to={userlink}><FaUserAstronaut size={30}/></Link></li>
+                    <li><Link to="/dashboard"><FaPencilRuler size={30}/></Link></li>
+                    <li><Link to="/" onClick={handleLogout}><FaSignOutAlt size={30}/></Link></li>
                 </ul>
                 </div>
             </div>

@@ -72,7 +72,9 @@ const Login = () => {
 			  </button>
 		    </Link>
       </form>
-      ):(<div className="loader"></div>)}
+      ):(
+        <div className="loader"></div>
+        )}
     </div>
   );
 }

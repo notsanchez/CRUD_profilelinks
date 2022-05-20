@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import NavbarLog from './components/NavbarLog';
 import Home from './Home';
+import About from './pages/About';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Create from './pages/Create';
 import SignUp from './pages/Signup';
@@ -27,6 +28,10 @@ function App() {
               <NavbarLog/>
               <Create />
             </Route>
+            <Route exact path="/about">
+              <NavbarLog/>
+              <About />
+            </Route>
             <Route path="/:id">
               <Profile />
             </Route>
@@ -40,6 +45,10 @@ function App() {
               <Navbar/>
               <Login />
             </Route>
+            <Route path="/about">
+              <Navbar/>
+              <About />
+            </Route>
             <Route path="/:id">
               <Profile />
             </Route>
@@ -47,7 +56,7 @@ function App() {
               <Login/>
             </Route>
             <Route exact path="/" render={()=>(
-              <Home/> ? <Redirect to="/login" /> : <Login />         
+              <Home/> ? <Redirect to="/about" /> : <About/>         
             )} />
 		      </Switch>
         </div>

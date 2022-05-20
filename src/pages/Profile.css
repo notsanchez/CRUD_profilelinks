@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
-  background-color: #030303;
+  background-color: #000;
   font-family: "Poppins";
   letter-spacing: 2px;
 }
@@ -52,7 +52,6 @@ body {
 .profile-name {
   text-align: center;
   color: white;
-  padding: 20px;
   font-size: 38px;
 }
 
@@ -113,6 +112,8 @@ body {
 a {
   color: #fff;
   text-decoration: none;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 a:empty{

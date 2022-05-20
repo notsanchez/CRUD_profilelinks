@@ -3,15 +3,31 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import './Profile.css'
 import ReactPlayer from "react-player"
-import { FaBehance } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 
 const Profile = () => {
 
-  const { id } = useParams();
+  const { id } = useParams()
+
+  const user = localStorage.getItem('user');
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const Editprofile = () => {
+    if(user === id){
+      return(
+      <Link to="/dashboard">
+        <FaEdit size={30}/>
+      </Link>
+    )} else {
+      return(
+      <h2></h2>
+      )}
+  }
 
 
   useEffect(() => {
@@ -28,6 +44,7 @@ const Profile = () => {
   }, []);
   console.log(loading);
 
+
   return (
     <body>
     <div className="profile-details">
@@ -36,9 +53,11 @@ const Profile = () => {
         <div className="body">
           <title>{data.id} | sanchezroot.wtf</title>
           <img className="profile-picture"
-              src={ data.image } />
-
+              src={ data.image } 
+          />
+          <Editprofile/>
           <div className="profile-name">{ data.id }</div>
+
           <p className="desc">{ data.body }</p>
 
           <a href={ data.sociallink } className="social">
@@ -64,11 +83,10 @@ const Profile = () => {
               }
             url={data.music}
           />
-          
+
           <div className="author">
             <p>made with <a href="/">sanchezroot.wtf</a></p>
           </div>
-
         </div>
       ):(
         <div className="loader"></div>
