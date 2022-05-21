@@ -22,6 +22,7 @@ const Create = () => {
   const [social3link, setSocial3link] = useState('' || data.social3link);
   const [social4link, setSocial4link] = useState('' || data.social4link);
   const [music, setMusic] = useState('' || data.music);
+  const [bg, setBg] = useState('' || data.bg);
   const [nolink] = useState('  ');
 
   const history = useHistory();
@@ -46,7 +47,7 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const dataprofile = { id, image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink }
+    const dataprofile = { id, image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink, bg }
 
     fetch('https://url-linkapi.herokuapp.com/pages/'+id, {
       method: 'PUT',
@@ -61,6 +62,7 @@ const Create = () => {
 
   return (
     <div className="create">
+  
       <form onSubmit={handleSubmit}>
       { loading ? data &&(
       <div>
@@ -77,18 +79,33 @@ const Create = () => {
             onChange={(e) => setId(e.target.value)}
           />
         </div>
-        <label>Image:</label>
-
+        <label>Profile Image:</label>
         <img className="create-picture"
-          src={image || data.image}
-          onChange={(e) => setImage(e.target.value)}
+            src={image || data.image}
+            onChange={(e) => setImage(e.target.value)}
         />
-  
+
         <FileBase64
         accept=".png, .jpg, .jpeg"
         name="arquivo"
+        className="profileinput"
         multiple={ false }
         onDone={({base64}) => setImage(base64)} 
+        />
+
+        <label>Background:</label>
+
+        <img className="create-bg"
+            src={bg || data.bg}
+            onChange={(e) => setBg(e.target.value)}
+        />
+
+        <FileBase64
+        accept=".png, .jpg, .jpeg"
+        name="arquivo"
+        className="bginput"
+        multiple={ false }
+        onDone={({base64}) => setBg(base64)} 
         />
         
         <label>Bio:</label>
@@ -154,7 +171,8 @@ const Create = () => {
 
         <label>⠀⠀⠀⠀</label>
         <div className="form-group">
-          <input 
+          <input
+          
           className="form-field" 
           type="text" 
           placeholder="URL Name"
@@ -186,7 +204,7 @@ const Create = () => {
             url={data.music || music}
           />
 
-          <button>Create</button>
+          <button>Save</button>
         </div>
         ):(<div className="loader"></div>)}
       </form>

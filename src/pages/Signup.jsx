@@ -26,6 +26,7 @@ const Signup = () => {
   const [social4link] = useState('');
   const [music] = useState('');
   const [nolink] = useState('');
+  const [bg] = useState('');
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
@@ -39,7 +40,7 @@ const Signup = () => {
 			const { data: res } = await axios.post(url, data);
 			console.log(res.message);
 
-      const dataprofile = { image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink }
+      const dataprofile = { image, body, social, social2, social3, social4, sociallink, social2link, social3link, social4link, music, nolink, bg }
 
       fetch('https://url-linkapi.herokuapp.com/pages/'+data.userName, {
         method: 'PUT',

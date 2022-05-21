@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import './Profile.css'
 import ReactPlayer from "react-player"
-import { FaEdit } from "react-icons/fa";
+import { FaPen } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
@@ -20,9 +20,9 @@ const Profile = () => {
   const Editprofile = () => {
     if(user === id){
       return(
-      <Link to="/dashboard">
-        <FaEdit size={30}/>
-      </Link>
+        <Link to="/dashboard" className="social editprofile">
+          <FaPen size={15}/> Edit profile
+        </Link>
     )} else {
       return(
       <h2></h2>
@@ -44,12 +44,11 @@ const Profile = () => {
   }, []);
   console.log(loading);
 
-
   return (
     <body>
-    <div className="profile-details">
-      { error && <div>Pagina não encontrada :(</div> }
-      { loading ? data && (
+    { error && <div>Pagina não encontrada :(</div> }
+    { loading ? data && (
+    <div className="profile-details" style={{ backgroundImage: `url(${data.bg})` }}>
         <div className="body">
           <title>{data.id} | sanchezroot.wtf</title>
           <img className="profile-picture"
@@ -57,6 +56,8 @@ const Profile = () => {
           />
           <Editprofile/>
           <div className="profile-name">{ data.id }</div>
+
+          <p className="linkdesc">sanchez.wtf/{data.id}</p>
 
           <p className="desc">{ data.body }</p>
 
@@ -88,10 +89,10 @@ const Profile = () => {
             <p>made with <a href="/">sanchezroot.wtf</a></p>
           </div>
         </div>
-      ):(
+    </div>
+    ):(
         <div className="loader"></div>
       )}
-    </div>
     </body>
   );
 }
